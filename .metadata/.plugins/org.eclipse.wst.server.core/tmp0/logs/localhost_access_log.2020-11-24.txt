@@ -1,0 +1,9 @@
+127.0.0.1 - - [24/Nov/2020:15:21:59 +0530] "GET / HTTP/1.1" 404 748
+::1 - - [24/Nov/2020:15:23:11 +0530] "GET /messenger/ HTTP/1.1" 200 239
+::1 - - [24/Nov/2020:15:24:55 +0530] "GET /messenger/webapi/myresource HTTP/1.1" 200 7
+127.0.0.1 - - [24/Nov/2020:15:28:41 +0530] "GET / HTTP/1.1" 404 748
+::1 - - [24/Nov/2020:15:28:47 +0530] "GET /messenger/ HTTP/1.1" 200 239
+::1 - - [24/Nov/2020:15:28:49 +0530] "GET /messenger/webapi/myresource HTTP/1.1" 200 7
+127.0.0.1 - - [24/Nov/2020:15:29:32 +0530] "GET / HTTP/1.1" 404 748
+::1 - - [24/Nov/2020:15:29:37 +0530] "GET /messenger/ HTTP/1.1" 200 239
+::1 - - [24/Nov/2020:15:29:39 +0530] "GET /messenger/webapi/myresource HTTP/1.1" 200 7
