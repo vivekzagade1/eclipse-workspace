@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Message {
 	
 	private long id;
-	private String message;
-	private Date created;
 	private String author;
+	private Date created;
+	private String message;
 	
 	public Message()
 	{
