@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.Status;
+
 import krishagni.messenger.database.DatabaseClass;
 import krishagni.messenger.model.Comment;
+import krishagni.messenger.model.ErrorMessage;
 import krishagni.messenger.model.Message;
 
 public class CommentService {
@@ -28,8 +33,22 @@ public class CommentService {
 	
 	public Comment getComment(long messageId, long commentId)
 	{
+		ErrorMessage errorMessage = new ErrorMessage("Not found", 404, "Google.com");
+		Response response = Response.status(Status.NOT_FOUND)
+				.entity(errorMessage)
+				.build();
+		Message message = messages.get(messageId);
+		if(message == null)
+		{
+			throw new WebApplicationException(response);
+		}
 		Map<Long, Comment> comments = messages.get(messageId).getComments();
-		return comments.get(commentId);
+		Comment comment = comments.get(commentId);
+		if(comment == null)
+		{
+			throw new WebApplicationException(response);
+		}
+		return comment;
 	}
 	
 	public Comment updateComment (long messageId, Comment comment)
